@@ -271,4 +271,3 @@ import os
 import sys
 ```
 Это лишь некоторые из рекомендаций PEP 8. Цель PEP 8 - сделать код Python более читаемым и понятным для людей.
-ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT May 24 Version
