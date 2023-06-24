@@ -4,7 +4,7 @@
 """
 name = input("Введите имя: ")
 
-count_subscribers = input("Введите количество подписчиков: ")
+count_subscribers = int(input("Введите количество подписчиков: "))
 
 print("Привет, " + name + "!")
 if count_subscribers >= 100000: 
