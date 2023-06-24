@@ -7,11 +7,12 @@ name = input("Введите имя: ")
 count_subscribers = input("Введите количество подписчиков: ")
 
 print("Привет, " + name + "!")
-if subscribers >= 100000: 
+if count_subscribers >= 100000: 
     print("У вас уже есть серебряная кнопка!")
-elif subscribers >= 1000000:
+elif count_subscribers >= 1000000:
     print("У вас уже есть серебряная и золотая кнопки!")
-elif subscribers < 100000:
+else:
     print("У вас пока недостаточно подписчиков для кнопки Ютуба!")
-else: 
-    print("Ошибка: некорректное количество подписчиков.")
+
+if count_subscribers < 0:
+    print("Ошибка: количество подписчиков не может быть отрицательным.")
