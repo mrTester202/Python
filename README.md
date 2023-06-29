@@ -100,7 +100,7 @@ _Этот код создает новый объект подкласса `High
 
 **Пример наследования:**
 
-```
+```python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -118,7 +118,7 @@ _Класс Dog наследует свойства и методы класса
 
 **Пример полиморфизма:**
 
-```
+```python
 class Animal:
     def __init__(self, name):
         self.name = name
