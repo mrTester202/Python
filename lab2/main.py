@@ -1,10 +1,15 @@
-global_variable = 0 # объявляем глобальную переменную
+GLOBAL_VARIABLE = 0
+
 
 def increase_global_variable():
-    global global_variable # используем ключевое слово global, чтобы указать, что хотим использовать глобальную переменную
-    global_variable += 1 # увеличиваем значение глобальной переменной на 1
-    return global_variable # возврат значения
+    """
+    функция которая увеличивает значение глобальной переменной
+    """
+    global GLOBAL_VARIABLE 
+    GLOBAL_VARIABLE += 1 
+    return GLOBAL_VARIABLE 
 
-print(increase_global_variable()) # 1
-print(increase_global_variable()) # 2
-print(increase_global_variable()) # 3
+if __name__ == "__main__":
+    print(increase_global_variable()) 
+    print(increase_global_variable()) 
+    print(increase_global_variable()) 
