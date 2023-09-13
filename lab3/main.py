@@ -1,5 +1,8 @@
+ from typing import Type
+
+
 class Employee:
-    def __init__(self, name: str, surname: str, age: int, classter) -> None:
+    def __init__(self, name: str, surname: str, age: int, classter: Type) -> None:
         """
         Создание переменных (конструктор)
         """
@@ -57,6 +60,18 @@ class Employee:
         """
         self.__bonus = bonus
 
+     def get_classter(self) -> Type:
+        """
+        Метод получения classter
+        """
+        return self.__classter
+
+    def set_classter(self, classter: Type) -> None:
+        """
+        Метод установки classter
+        """
+        self.__classter = classter
+
     def calculate_salary(self) -> float:
         """
         Метод расчета зарплаты
@@ -92,7 +107,7 @@ class DeputyDirector(Employee):
 
 if __name__ == '__main__':
     while True:
-        choose = input("Выберите кто вы:\n1 - менеджер\n2 - директор\n3 - зам.директора\n--> ")
+        choose = input("Выберите кто вы:\n1 - менеджер\n2 - директор\n3 - зам.директора\n0 - выход из программы\n--> ")
         if choose == '1':
             worker_1 = Employee("John", "Mitch", 30, Manager)  # Передайте экземпляр класса, а не класс
             salary_w_1 = worker_1.calculate_salary()
@@ -105,5 +120,8 @@ if __name__ == '__main__':
             worker_3 = Employee("John", "Mitch", 30, DeputyDirector)  # Передайте экземпляр класса, а не класс
             salary_w_3 = worker_3.calculate_salary()
             print(salary_w_3)
+        elif choose == '0':
+            print("exit...")
+            break
         else:
             print("error!\n")
