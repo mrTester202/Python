@@ -28,7 +28,7 @@
     🔹Л/Р №1
 
 [PEP8](https://peps.python.org/pep-0008/)
-[Type hints]([https://peps.python.org/pep-0008/](https://docs.python.org/3/library/typing.html))    
+[Type hints](https://docs.python.org/3/library/typing.html)  
 
 **3.Коллекции в Python**
 
