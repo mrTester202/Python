@@ -1,5 +1,6 @@
 ## ОП Python / 10.Excel работа с данными используя Python
 
+### Введение
 
 **Зачем работать с данными Excel в Python?**
 
@@ -29,4 +30,54 @@ _Работа с данными Excel_ позволяет **эффективно
 
 **Создание дашбордов** - вы можете исп-ть **Python** для создания интерактивных **дашбордов** и визуализаций данных на основе данных **Excel**.
 
+### Установка Pandas
+
+_CMD:_ pip install **pandas**
+
+### Google Sheets Python
+
+Установка _CMD:_ pip install **gspread**
+
+Работа с **Google Sheets** в **Python** может быть выполнена с исп-м библиотеки _gspread_. Эта библиотека позволяет взаимодействовать с таблицами **Google Sheets**, читать и записывать данные, создавать новые таблицы и многое др.
+
+Пример чтения данных из Google Sheets:
+
+```python
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Указываем путь к файлу с учетными данными (Service Account Key)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('your-credentials.json', ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'])
+
+# Авторизация
+gc = gspread.authorize(credentials)
+
+# Открываем таблицу по URL или по имени
+worksheet = gc.open('Название таблицы').sheet1
+
+# Чтение данных
+data = worksheet.get_all_records()
+print(data)
+```
+
+Запись данных
+
+```python
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Указываем путь к файлу с учетными данными (Service Account Key)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('your-credentials.json', ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'])
+
+# Авторизация
+gc = gspread.authorize(credentials)
+
+# Открываем таблицу по URL или по имени
+worksheet = gc.open('Название таблицы').sheet1
+
+# Чтение данных
+data = worksheet.get_all_records()
+print(data)
+```
 [PANDAS documentation](https://pandas.pydata.org/docs/)
+[GSPREAD documentation](https://docs.gspread.org/en/v5.10.0/)
