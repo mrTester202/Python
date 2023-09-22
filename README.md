@@ -32,11 +32,15 @@ _Работа с данными Excel_ позволяет **эффективно
 
 ### Установка Pandas
 
-_CMD:_ pip install **pandas**
+_CMD:_ 
+
+    pip install pandas
 
 ### Google Sheets Python
 
-Установка _CMD:_ pip install **gspread**
+Установка _CMD:_ 
+
+    pip install gspread
 
 Работа с **Google Sheets** в **Python** может быть выполнена с исп-м библиотеки _gspread_. Эта библиотека позволяет взаимодействовать с таблицами **Google Sheets**, читать и записывать данные, создавать новые таблицы и многое др.
 
