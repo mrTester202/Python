@@ -301,3 +301,72 @@ if __name__ == "__main__":
 **Повторение:** Повторяем шаги 2 и 3 для текущего узла, пока не найдем пустое место, где можно вставить новый элемент.
 
 **Вставка:** Когда достигнуто пустое место (нет дочерних узлов), вставляем новый узел там.
+
+**Бинарное дерево** и **бинарное дерево поиска (BST)** - это две разные структуры данных, хотя обе они представляют собой деревья, состоящие из узлов, связанных между собой. 
+
+**Бинарное дерево поиска** также является бинарным деревом, но оно предназначено для хранения данных так, чтобы операции поиска, вставки и удаления были эффективными. Главной целью BST является упорядоченное хранение данных с возможностью быстрого поиска. В **BST** данные упорядочены таким образом, что для каждого узла все значения в левом поддереве меньше или равны значению узла, а все значения в правом поддереве больше. Это упорядочение обеспечивает эффективные операции поиска, вставки и удаления.
+
+**BST** широко исп-ся для реализации структур данных, таких как словари, множества и ассоциативные массивы. Они позволяют эффективно выполнять операции поиска, вставки и удаления, и их упорядоченность данных имеет практическое применение.
+
+**BST дерево:**
+![1-sample-BST](https://github.com/mrTester202/Python/assets/117897782/b8aae7c8-836f-4d9c-b5c4-a126cb88c05b)
+
+Пример кода
+
+```python
+class TreeNode:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+class BinarySearchTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        self.root = self._insert_recursively(self.root, key)
+
+    def _insert_recursively(self, root, key):
+        if root is None:
+            return TreeNode(key)
+        if key < root.val:
+            root.left = self._insert_recursively(root.left, key)
+        else:
+            root.right = self._insert_recursively(root.right, key)
+        return root
+
+    def search(self, key):
+        return self._search_recursively(self.root, key)
+
+    def _search_recursively(self, root, key):
+        pass
+
+# остальные методы класса
+
+if __name__ == "__main__":
+    bst = BinarySearchTree()
+    bst.insert(50)
+    bst.insert(30)
+    bst.insert(70)
+    bst.insert(20)
+    bst.insert(40)
+    bst.insert(60)
+    bst.insert(80)
+
+    # Поиск элемента в дереве
+    result = bst.search(60)
+    if result:
+        print("Элемент найден:", result.val)
+    else:
+        print("Элемент не найден")
+
+    # Удаление элемента из дерева
+    bst.delete(30)
+    print("После удаления 30:")
+    result = bst.search(30)
+    if result:
+        print("Элемент найден:", result.val)
+    else:
+        print("Элемент не найден")
+```
